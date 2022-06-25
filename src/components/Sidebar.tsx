@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { Key } from "react";
 import { Lessons } from "./Lessons";
 
 
@@ -19,6 +20,7 @@ interface GetLessonsQueryResponse {
         id: string
         title: string
         slug: string
+        map: any
         availableAt: string
         lessonType: 'live' | 'class'
     }
@@ -35,7 +37,7 @@ export function Sidebar(){
             </span>
 
             <div className='flex flex-col gap-8'>
-                {data?.lessons.map(lesson => {
+                {data?.lessons.map((lesson: { id: Key | null | undefined; title: string; slug: string; availableAt: string | number | Date; lessonType: any; }) => {
                     return (
                         <Lessons
                             key = {lesson.id}
