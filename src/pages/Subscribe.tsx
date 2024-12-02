@@ -25,12 +25,12 @@ export function Subscribe() {
      async function handleSubscriber(event: FormEvent) {
         event.preventDefault()
 
-        await createSubscriber({
-            variables: {
-                name,
-                email,
-            }
-        })
+        // await createSubscriber({
+        //     variables: {
+        //         name,
+        //         email,
+        //     }
+        // })
         
         navigate('event/lesson/opening-react-week')
     }
